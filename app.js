@@ -12,12 +12,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+require('./routes')(app);
+
 app.get('*', (req, res) => {
   res.send({ message: 'Hello,It is just me' });
 });
 
 app.listen(app.get('port'), () => {
-  console.log('app running on port ' + app.get('port'));
+  console.log('api running on port ' + app.get('port'));
 });
 
 module.exports = app;

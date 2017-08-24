@@ -1,27 +1,23 @@
 module.exports = (sequelize, DataTypes) => {
-  const Users = sequelize.define('Users', {
-    email: {
+  const Meals = sequelize.define('Meals', {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    password: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    role: {
-      type: DataTypes.STRING,
+    quantity: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   }, {
     classMethods: {
-      associate: (/* models */) => {
+      associate: (models) => {
         // associations can be defined here
       },
     },
   });
-  return Users;
+  return Meals;
 };
